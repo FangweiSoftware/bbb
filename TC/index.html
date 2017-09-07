@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交通信号管理系统</title>
+    <link rel="stylesheet" href="../libs/jquery-easyui/css/easyui.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" id='index_theme' href="./css/theme.css">
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.3.1/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v4.3.1/build/ol.js"></script>
+    <script src="../libs/momentjs/moment.min.js"></script>
+</head>
+<body class="easyui-layout" id='main_layout'>
+
+<!--北区(北区包含导航栏)-->
+    <div data-options="region:'north',border:false"  style="height:60px;padding: 0;">
+        <nav>
+             <a href="#" class='logo'></a>
+             <h1>交通信号配时服务管理系统</h1>
+            <!--No.1导航栏下拉菜单事件绑定区域-->
+             <ul class='nav clearfix' style='position:fixed;left: 400px;top: 0px;'>
+                <li >路口建档
+                    <ul>
+                        <li id='create_cross'>新建路口</li>
+                        <li id='manage_cross'>路口管理</li>
+                        <li id='edit_cross'>路口编辑</li>
+                    </ul>
+                </li>
+                <li>路口巡检
+                    <ul>
+                        <li id='manage_plan'>计划管理</li>
+                        <li id='edit_plan'>计划编辑</li>
+                        <li id='analyze_pro'>问题分析</li>
+                    </ul>
+                </li>
+                <li >舆情管理
+                    <ul>
+                        <li id='manage_pubinfo'>舆情列表</li>
+                        <li id='process_pubinfo'>舆情处理</li>
+                        <li id='analyze_pubinfo'>舆情分析</li>
+                        <li id='relative_pubinfo'>同环比</li>
+                    </ul>
+                </li>
+                <li>绿路优化
+                    <ul>
+                        <li id='manage_optimize'>优化管理</li>
+                        <li id='optimize_task'>优化任务</li>
+                        <li id='create_greenRoad'>新建绿路</li>
+                        <li id='manage_greenRoad'>绿路管理</li>
+                    </ul>
+                </li>
+                <li>查询统计
+                    <ul>
+                        <li id='inquery_cross'>路口查询</li>
+                        <li id='output_account'>台账导出</li>
+                        <li id='about_system'>关于系统</li>
+                    </ul>
+                </li>
+             </ul>
+            <!--No.2导航栏右侧用户设置相关区域-->
+            <div class="user-center fr clearfix">
+            <a href="#" id='personalOptions'>您好! admin</a>
+                <ul id='optionsList' class='clearfix'>
+                    <li><i class='glyphicon glyphicon-user'></i> 用户管理</li>
+                    <li id='settings'><i class='glyphicon glyphicon-cog'></i> 设置</li>
+                    <li><i class="glyphicon glyphicon-log-out"></i> 退出</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+<!--东区(东区只包含操作地图相关的工具栏)-->
+    <div data-options="region:'east',collapsed:true" title="工具栏" style="width:100px;height:300px">
+        <ul class="easyui-tree" data-options="animate:true,dnd:true"></ul>
+    </div>
+    <div data-options="region:'west',split:true,collapsed:true,minWidth:145,tools: [{
+		iconCls:'icon-add',
+		handler:function(){alert('add')}
+    }]" title=" " style="width:460px;" id='west_layout'>
+        <div class="easyui-accordion" data-options="fit:true,border:false" id='left_windows'>
+
+        </div>
+    </div>
+
+
+<!--中区(中区暂时为空)-->
+    <div data-options="region:'center',iconCls:'icon-ok'" style=""></div>
+
+<!--南区(地图南区包含路口管理、舆情管理、优化管理三个列表组成的tab栏)-->
+    <div data-options="region:'south',split:true,collapsed:true,href:'pages/tables_list/lists.html'" style="width:100px;height:393px" id='south_layout'>
+
+    </div>
+    <div id='south_layout_window' class="easyui-window"  data-options="title:'列表管理',tools:'#tb',closed:true">
+    </div>
+    <div id="tb">
+         <a href="#" class="easyui-linkbutton" id='mini_south_layout_window'></a>
+    </div>
+
+
+
+<!--No.3窗口相关区域-->
+    <!--3.1路口建档相关窗口-->
+        <div id="create_cross_window" class="easyui-window" data-options="closed:true"></div>
+
+        <div id="edit_cross_window" class="easyui-window" data-options="closed:true"></div>
+    <!--3.2路口巡检相关窗口-->
+
+    <!--3.3舆情管理相关窗口-->
+
+    <!--3.4绿路优化相关窗口-->
+
+    <!--3.5查询统计相关窗口-->
+
+    <!--3.6导航栏右侧用户设置窗口-->
+    <div id="settings_window" class="easyui-window" data-options="closed:true"></div>
+
+
+
+
+<!--地图相关区域-->
+<a class="skiplink" href="#map">Go to map</a>
+<div id="map" class="map" tabindex="0" style='min-width: 1500px'></div>
+<button id="zoom-out">Zoom out</button>
+<button id="zoom-in">Zoom in</button>
+
+</body>
+<script src="../libs/jquery/dist/jquery.js"></script>
+<script src="../libs/jquery-easyui/js/jquery.easyui.min.js"></script>
+<script src="../libs/art-template/template-web.js"></script>
+<script src="./js/map.js"></script>
+<script src="./js/public.js"></script>
+<script src="./js/tools.js"></script>
+<script src="./js/index.js"></script>
+</html>

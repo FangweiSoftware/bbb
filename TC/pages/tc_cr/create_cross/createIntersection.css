@@ -1,0 +1,948 @@
+@charset "UTF-8";
+
+.create-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  color: #fff;
+}
+
+button.public-btn {
+  box-sizing: border-box;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  border-top: 1px solid #6faad7;
+  border-bottom: 1px solid #24475e;
+  border-radius: 3px;
+  outline: none;
+  background-color: #1b7ac4;
+  color: #fff;
+  cursor: pointer;
+}
+
+button.bgcolor-ccc-btn {
+  background-color: #ccc;
+}
+
+/********************* 新建路口界面 ************************/
+#create_intersection {
+  background-color: #064e7b;
+  font-size: 12px;
+  color: #fff;
+  min-width: 515px;
+}
+#create_intersection button {
+  /*box-sizing: border-box;*/
+  /*width: 90px;*/
+  /*height: 30px;*/
+  /*line-height: 30px;*/
+  /*border: none;*/
+  /*border-top: 1px solid #6faad7;*/
+  /*border-bottom: 1px solid #24475e;*/
+  /*border-radius: 3px;*/
+  /*outline: none;*/
+  /*background-color: #1b7ac4;*/
+  /*color: #fff;*/
+  /*cursor: pointer;*/
+}
+/*#create_intersection button:hover {*/
+  /*color: #000;*/
+/*}*/
+#create_intersection .create-intersection-title {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+#create_intersection .create-intersection-content {
+  width: 100%;
+  border-top: 1px solid #043d61;
+  border-radius: 3px;
+  background-color: #387195;
+  color: #fff;
+  overflow: hidden;
+  /*display:inline-block;*/
+  /**display:inline;*/
+  /**zoom:1;*/
+}
+
+#intersectionManagerPanel .intersection-content-tab,
+#create_intersection .intersection-content-tab {
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  background-color: #04436a;
+}
+
+#intersectionManagerPanel .intersection-content-tab > li,
+#create_intersection .intersection-content-tab > li {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+#intersectionManagerPanel .intersection-content-tab > li.li-active,
+#intersectionManagerPanel .intersection-content-tab > li:hover,
+#create_intersection .intersection-content-tab > li.li-active,
+#create_intersection .intersection-content-tab > li:hover {
+  background-color: #387195;
+}
+
+#intersectionManagerPanel .intersection-content-tab-message > li,
+#create_intersection .intersection-content-tab-message > li {display: none;}
+
+#intersectionManagerPanel .intersection-content-tab-message > li:first-child,
+#create_intersection .intersection-content-tab-message > li:first-child {display: block;}
+
+/* 路口基本信息界面 */
+#intersectionManagerPanel li.intersection-information,
+#create_intersection li.intersection-information {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#intersectionManagerPanel li.intersection-information .intersection-information-header,
+#create_intersection li.intersection-information .intersection-information-header {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+}
+
+#intersectionManagerPanel li.intersection-information .intersection-information-header label,
+#create_intersection li.intersection-information .intersection-information-header label {
+  margin-left: 30px;
+}
+
+#intersectionManagerPanel li.intersection-information ul,
+#create_intersection li.intersection-information ul {
+}
+
+#intersectionManagerPanel li.intersection-information ul li,
+#create_intersection li.intersection-information ul li {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 25px;
+  line-height: 25px;
+  margin-bottom: 12px;
+}
+
+#intersectionManagerPanel li.intersection-information ul li img,
+#create_intersection li.intersection-information ul li img {
+  position: absolute;
+  top: 9px;
+  left: -10px;
+}
+
+#intersectionManagerPanel li.intersection-information ul li > label,
+#create_intersection li.intersection-information ul li > label {float: left;}
+
+#intersectionManagerPanel li.intersection-information input,
+#create_intersection li.intersection-information input {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 150px;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #04436a;
+  color: #fff;
+  text-decoration: none;
+}
+
+#intersectionManagerPanel li.intersection-information input[disabled],
+#create_intersection li.intersection-information input[disabled] {
+  color: #999;
+}
+
+#intersectionManagerPanel li.intersection-information div.drop-down,
+#create_intersection li.intersection-information div.drop-down {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 150px;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 32px;
+  border-radius: 3px;
+  background-color: #04436a;
+  cursor: pointer;
+  /*overflow: hidden;*/
+}
+
+#intersectionManagerPanel li.intersection-information div.drop-down .drop-down-text,
+#create_intersection li.intersection-information div.drop-down .drop-down-text {
+  display: inline-block;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+}
+
+#intersectionManagerPanel li.intersection-information div.drop-down .drop-down-arrow,
+#create_intersection li.intersection-information div.drop-down .drop-down-arrow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 6px solid;
+  border-color: #fff transparent transparent transparent;
+}
+
+#intersectionManagerPanel li.intersection-information ul.drop-down-selections,
+#create_intersection li.intersection-information ul.drop-down-selections {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 100%;
+  max-height: 280px;
+  background-color: #032b45;
+  border-radius: 3px;
+  display: none;
+  overflow-y: auto;
+}
+
+#intersectionManagerPanel li.intersection-information ul.drop-down-selections input,
+#create_intersection li.intersection-information ul.drop-down-selections input {background-color: #032b45;}
+
+#intersectionManagerPanel li.intersection-information ul.drop-down-selections > li,
+#create_intersection li.intersection-information ul.drop-down-selections > li {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 20px;
+  line-height:20px;
+  float: none;
+  padding-left: 10px;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+#intersectionManagerPanel li.intersection-information ul.drop-down-selections > li + li,
+#create_intersection li.intersection-information ul.drop-down-selections > li + li {
+  border-top: 1px solid #2e6385;
+}
+
+#intersectionManagerPanel li.intersection-information ul.drop-down-selections > li:last-child a,
+#create_intersection li.intersection-information ul.drop-down-selections > li:last-child a {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  margin-left: -8px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../../../images/edit-select.png") center center no-repeat;
+  cursor: pointer;
+}
+
+#intersectionManagerPanel li.intersection-information ul.drop-down-selections > li:hover,
+#create_intersection li.intersection-information ul.drop-down-selections > li:hover {
+  background-color: #0B0;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(2) input,
+#create_intersection li.intersection-information li:nth-child(2) input {
+  width: 184px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(4) input,
+#create_intersection li.intersection-information li:nth-child(4) input {
+  width: 172px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(6) div.drop-down,
+#create_intersection li.intersection-information li:nth-child(6) div.drop-down {
+  width: 160px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(8) div.drop-down,
+#create_intersection li.intersection-information li:nth-child(8) div.drop-down {
+  width: 160px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(7) div.drop-down,
+#create_intersection li.intersection-information li:nth-child(7) div.drop-down {
+  width: 126px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(10) input,
+#create_intersection li.intersection-information li:nth-child(10) input {
+  width: 160px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(12) div.drop-down,
+#create_intersection li.intersection-information li:nth-child(12) div.drop-down {
+  width: 172px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(14) div.drop-down,
+#create_intersection li.intersection-information li:nth-child(14) div.drop-down {
+  width: 172px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(15),
+#create_intersection li.intersection-information li:nth-child(15) {width: 100%;}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(15) div.drop-down,
+#create_intersection li.intersection-information li:nth-child(15) div.drop-down {
+  width: 386px;
+}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(16),
+#create_intersection li.intersection-information li:nth-child(16) {width: 100%; margin-bottom: 30px;}
+
+#intersectionManagerPanel li.intersection-information li:nth-child(16) div.drop-down,
+#create_intersection li.intersection-information li:nth-child(16) div.drop-down {
+  width: 386px;
+}
+
+/* 路口结构界面 */
+#intersectionManagerPanel li.intersection-structure,
+#create_intersection li.intersection-structure {
+  position: relative;
+  padding: 24px 12px 0;
+}
+
+#intersectionManagerPanel li.intersection-structure button.intersection-edit-btn,
+#create_intersection li.intersection-structure button.intersection-edit-btn {
+  position: absolute;
+  right: 20px;
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab,
+#create_intersection li.intersection-structure .intersection-structure-tab {
+  position: relative;
+  width: 300px;
+  height: 34px;
+  /*vertical-align: bottom;*/
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab > li,
+#create_intersection li.intersection-structure .intersection-structure-tab > li {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #04456c;
+  text-align: center;
+  cursor: pointer;
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab > li:first-child,
+#create_intersection li.intersection-structure .intersection-structure-tab > li:first-child {
+  left: 0;
+  border-top-left-radius: 3px;
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab > li:last-child,
+#create_intersection li.intersection-structure .intersection-structure-tab > li:last-child {
+  right: 0;
+  border-top-right-radius: 3px;
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab > li.li-active,
+#create_intersection li.intersection-structure .intersection-structure-tab > li.li-active {
+  height: 34px;
+  line-height: 34px;
+  background-color: #3f7ea7;
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab-message,
+#create_intersection li.intersection-structure .intersection-structure-tab-message {
+  box-sizing: border-box;
+  width: 100%;
+  /*padding-left: 75px;*/
+  /*padding-right: 75px;*/
+  height: 351px;
+  margin-bottom: 20px;
+  background-color: #ccc;
+  border-radius: 0 0 3px 3px;
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab-message > li,
+#create_intersection li.intersection-structure .intersection-structure-tab-message > li {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab-message > li:first-child,
+#create_intersection li.intersection-structure .intersection-structure-tab-message > li:first-child {
+  display: block;
+}
+
+#intersectionManagerPanel li.intersection-structure .intersection-structure-tab-message > li:last-child,
+#create_intersection li.intersection-structure .intersection-structure-tab-message > li:last-child {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+/* 工作表/时段表管理界面 */
+#intersectionManagerPanel li.weekday-managment,
+#create_intersection li.weekday-managment {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+#intersectionManagerPanel li.weekday-managment .weekday-managment-header,
+#create_intersection li.weekday-managment .weekday-managment-header {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+}
+
+#intersectionManagerPanel li.weekday-managment .weekday-managment-header span,
+#create_intersection li.weekday-managment .weekday-managment-header span {
+  margin-right: 30px;
+}
+
+#intersectionManagerPanel li.weekday-managment .weekday-managment-middle,
+#create_intersection li.weekday-managment .weekday-managment-middle {
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 3px;
+  background-color: #0b3d60;
+  overflow: hidden;
+}
+
+#intersectionManagerPanel li.weekday-managment .weekday-managment-middle li,
+#create_intersection li.weekday-managment .weekday-managment-middle li {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption,
+#create_intersection li.weekday-managment ul.middle-caption {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 0;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption > li,
+#create_intersection li.weekday-managment ul.middle-caption > li {
+  height: 30px;
+  border-right: 1px solid #07375b;
+  font-size: 12px;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption li:nth-child(1),
+#intersectionManagerPanel li.weekday-managment table td:nth-child(1),
+#create_intersection li.weekday-managment ul.middle-caption li:nth-child(1),
+#create_intersection li.weekday-managment table td:nth-child(1) {
+  width: 50px;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption li:nth-child(2),
+#intersectionManagerPanel li.weekday-managment table td:nth-child(2),
+#create_intersection li.weekday-managment ul.middle-caption li:nth-child(2),
+#create_intersection li.weekday-managment table td:nth-child(2) {
+  width: 80px;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption li:nth-child(3),
+#intersectionManagerPanel li.weekday-managment table td:nth-child(3),
+#create_intersection li.weekday-managment ul.middle-caption li:nth-child(3),
+#create_intersection li.weekday-managment table td:nth-child(3) {
+  width: 80px;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption li:nth-child(4),
+#intersectionManagerPanel li.weekday-managment table td:nth-child(4),
+#create_intersection li.weekday-managment ul.middle-caption li:nth-child(4),
+#create_intersection li.weekday-managment table td:nth-child(4) {
+  width: 240px;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption li:nth-child(5),
+#intersectionManagerPanel li.weekday-managment table td:nth-child(5),
+#create_intersection li.weekday-managment ul.middle-caption li:nth-child(5),
+#create_intersection li.weekday-managment table td:nth-child(5) {
+  width: 122px;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption li:nth-child(6),
+#intersectionManagerPanel li.weekday-managment table td:nth-child(6),
+#create_intersection li.weekday-managment ul.middle-caption li:nth-child(6),
+#create_intersection li.weekday-managment table td:nth-child(6) {
+  width: 100px;
+}
+
+#intersectionManagerPanel li.weekday-managment ul.middle-caption li:nth-child(7),
+#intersectionManagerPanel li.weekday-managment table td:nth-child(7),
+#create_intersection li.weekday-managment ul.middle-caption li:nth-child(7),
+#create_intersection li.weekday-managment table td:nth-child(7) {
+  width: 60px;
+}
+
+#intersectionManagerPanel li.weekday-managment div.middle-message,
+#create_intersection li.weekday-managment div.middle-message {
+  position: relative;
+  width: 100%;
+  height: 184px;
+  overflow: hidden;
+}
+
+#intersectionManagerPanel li.weekday-managment table,
+#create_intersection li.weekday-managment table {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  border-collapse:collapse;
+}
+
+#intersectionManagerPanel li.weekday-managment table tr,
+#create_intersection li.weekday-managment table tr {
+  box-sizing: border-box;
+  height: 60px;
+  line-height: 60px;
+}
+
+#intersectionManagerPanel li.weekday-managment table tr:last-child,
+#create_intersection li.weekday-managment table tr:last-child {
+  box-sizing: border-box;
+  height: 30px;
+  line-height: 30px;
+}
+
+#intersectionManagerPanel li.weekday-managment table tr:last-child td,
+#create_intersection li.weekday-managment table tr:last-child td {
+  height: 30px;
+}
+
+#intersectionManagerPanel li.weekday-managment table tr:last-child td a.add-tr-btn,
+#create_intersection li.weekday-managment table tr:last-child td a.add-tr-btn {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  background: url("../../../images/add.png") center center no-repeat;
+}
+
+#intersectionManagerPanel li.weekday-managment table td,
+#create_intersection li.weekday-managment table td {
+  position: relative;
+  box-sizing: border-box;
+  height: 60px;
+  border: 1px solid #07375b;
+}
+
+#intersectionManagerPanel li.weekday-managment td a::after,
+#create_intersection li.weekday-managment td a::after {
+  border: none;
+}
+
+#intersectionManagerPanel li.weekday-managment table li,
+#create_intersection li.weekday-managment table li {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#intersectionManagerPanel li.weekday-managment table .week-day,
+#create_intersection li.weekday-managment table .week-day {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#intersectionManagerPanel li.weekday-managment table .week-day-select,
+#create_intersection li.weekday-managment table .week-day-select {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#intersectionManagerPanel li.weekday-managment table .week-day-select li,
+#create_intersection li.weekday-managment table .week-day-select li {
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+#intersectionManagerPanel li.weekday-managment table .week-day-select li.li-active,
+#create_intersection li.weekday-managment table .week-day-select li.li-active {
+  background-color: #fff;
+}
+
+#intersectionManagerPanel li.weekday-managment a.weekday-edit-btn,
+#create_intersection li.weekday-managment a.weekday-edit-btn {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  margin-left: -41px;
+  display: block;
+  width: 82px;
+  height: 32px;
+  background: url("../../../images/edit.png") center center no-repeat;
+}
+
+#intersectionManagerPanel li.weekday-managment a.remove-tr-btn,
+#create_intersection li.weekday-managment a.remove-tr-btn {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  margin-left: -8px;
+  width: 16px;
+  height: 16px;
+  background: url("../../../images/del.png") center center no-repeat;
+  background-size: 100%;
+}
+
+#intersectionManagerPanel li.weekday-managment div.page-btn-wrap,
+#create_intersection li.weekday-managment div.page-btn-wrap {
+  position: relative;
+  height: 30px;
+  padding-left: 10px;
+}
+
+#intersectionManagerPanel li.weekday-managment div.page-btn-wrap a,
+#create_intersection li.weekday-managment div.page-btn-wrap a {
+  display: block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  float: left;
+  margin-top: 7px;
+  margin-right: 10px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#intersectionManagerPanel li.weekday-managment div.page-btn-wrap a:hover,
+#intersectionManagerPanel li.weekday-managment div.page-btn-wrap a.page-active,
+#create_intersection li.weekday-managment div.page-btn-wrap a:hover,
+#create_intersection li.weekday-managment div.page-btn-wrap a.page-active {
+  text-decoration: underline;
+}
+
+#intersectionManagerPanel li.weekday-managment a.prev-page-btn,
+#create_intersection li.weekday-managment a.prev-page-btn {
+  background: url("../../../images/tabs_icons.png") 0 0 no-repeat;
+}
+
+#intersectionManagerPanel li.weekday-managment a.next-page-btn,
+#create_intersection li.weekday-managment a.next-page-btn {
+  background: url("../../../images/tabs_icons.png") -16px 0 no-repeat;
+}
+
+/* 按钮部分 */
+#intersectionManagerPanel li.intersection-information .intersection-information-footer,
+#intersectionManagerPanel li.intersection-structure .intersection-structure-footer,
+#intersectionManagerPanel li.weekday-managment .weekday-managment-footer,
+#create_intersection li.intersection-information .intersection-information-footer,
+#create_intersection li.intersection-structure .intersection-structure-footer,
+#create_intersection li.weekday-managment .weekday-managment-footer {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  border-top: 1px solid #215170;
+  text-align: center;
+  clear: both;
+}
+
+#intersectionManagerPanel li.intersection-information .intersection-information-footer button:first-child,
+#intersectionManagerPanel li.intersection-structure .intersection-structure-footer button:first-child,
+#create_intersection li.intersection-information .intersection-information-footer button:first-child,
+#create_intersection li.intersection-structure .intersection-structure-footer button:first-child,
+#intersectionManagerPanel li.weekday-managment .weekday-managment-footer button:first-child,
+#create_intersection li.weekday-managment .weekday-managment-footer button:first-child {
+  margin-right: 20%;
+}
+
+/*#intersectionManagerPanel li.intersection-information .intersection-information-footer button:last-child,*/
+/*#intersectionManagerPanel li.intersection-structure .intersection-structure-footer button:last-child,*/
+/*#create_intersection li.intersection-information .intersection-information-footer button:last-child,*/
+/*#create_intersection li.intersection-structure .intersection-structure-footer button:last-child {*/
+  /*margin-left: 10%;*/
+/*}*/
+
+/*#intersectionManagerPanel li.weekday-managment .weekday-managment-footer button:first-child,*/
+/*#create_intersection li.weekday-managment .weekday-managment-footer button:first-child {*/
+  /*margin-right: 20%;*/
+/*}*/
+
+
+/**************************************** 路口编辑/路口查看界面 ****************************************/
+#intersectionManagerPanel {
+  /*position: absolute;*/
+  /*top: 10%;*/
+  /*left: 50%;*/
+  /*margin-left: -370px;*/
+  /*width: 706px;*/
+  /*height: 545px;*/
+  /*padding: 0 12px 12px;*/
+  background-color: #064e7b;
+  font-size: 12px;
+  color: #fff;
+  /*border-radius: 3px;*/
+  /*display: none;*/
+  /*z-index: 30;*/
+}
+#intersectionManagerPanel button {
+  box-sizing: border-box;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  border-top: 1px solid #6faad7;
+  border-bottom: 1px solid #24475e;
+  border-radius: 3px;
+  outline: none;
+  background-color: #1b7ac4;
+  color: #fff;
+  cursor: pointer;
+}
+#intersectionManagerPanel button:hover {
+  color: #000;
+}
+#intersectionManagerPanel .intersection-manager-title {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+#intersectionManagerPanel .create-intersection-close-btn {
+  position: absolute;
+  top: 7px;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  background: url("../../../images/clear.png") 0 0 no-repeat;
+}
+#intersectionManagerPanel .create-intersection-close-btn:hover {
+  background-image: url("../../../images/close.png");
+}
+#intersectionManagerPanel .intersection-manager-content {
+  position: relative;
+  width: 100%;
+  height: 515px;
+  border-radius: 3px;
+  background-color: #387195;
+  color: #fff;
+  overflow: hidden;
+}
+#intersectionManagerPanel .intersection-manager-content-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid #195176;
+}
+#intersectionManagerPanel .intersection-manager-content-right {
+  position: absolute;
+  top: 0;
+  left: 201px;
+  width: 515px;
+  height: 100%;
+}
+#intersectionManagerPanel .intersectionDynamicSearch-title {
+  padding: 20px;
+  text-align: center;
+}
+/* 路口检索 */
+#intersectionManagerPanel .intersection-dynamic-search {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  width: 180px;
+  height: 30px;
+  z-index: 30;
+}
+#intersectionManagerPanel .intersection-dynamic-search input.road-dynamic-search-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  padding-left: 20px;
+  padding-right: 40px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background-color: #04436a;
+  color: #fff;
+  z-index: 31;
+}
+#intersectionManagerPanel .intersection-dynamic-search ul.road-dynamic-search-info {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  display: none;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: #032b45;
+}
+#intersectionManagerPanel .intersection-dynamic-search ul.road-dynamic-search-info li {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+}
+#intersectionManagerPanel .intersection-dynamic-search ul.road-dynamic-search-info li:hover {
+  background-color: #04436a;
+  /*background-color: #d4d4d4;*/
+  /*color: #323232;*/
+}
+#intersectionManagerPanel .intersection-dynamic-search a.road-dynamic-search-btn {
+  position: absolute;
+  top: 7px;
+  right: 20px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../../../images/search-white.png");
+  cursor: pointer;
+  z-index: 31;
+}
+
+
+
+/**************************************** 编辑下拉列表界面 ****************************************/
+#editerDropdown {
+  width: 444px;
+  background-color: #064e7b;
+  font-size: 12px;
+  color: #fff;
+}
+#editerDropdown button {
+  box-sizing: border-box;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  border-top: 1px solid #6faad7;
+  border-bottom: 1px solid #24475e;
+  border-radius: 3px;
+  outline: none;
+  background-color: #1b7ac4;
+  color: #fff;
+  cursor: pointer;
+}
+#editerDropdown button:hover {
+  color: #000;
+}
+/*#editerDropdown .editer-dropdown-title {*/
+  /*width: 100%;*/
+  /*height: 30px;*/
+  /*line-height: 30px;*/
+  /*text-align: center;*/
+/*}*/
+/*#editerDropdown .editer-dropdown-close-btn {*/
+  /*position: absolute;*/
+  /*top: 7px;*/
+  /*right: 12px;*/
+  /*width: 16px;*/
+  /*height: 16px;*/
+  /*background: url("../../../images/clear.png") 0 0 no-repeat;*/
+/*}*/
+/*#editerDropdown .editer-dropdown-close-btn:hover {*/
+  /*background-image: url("../../../images/close.png");*/
+/*}*/
+#editerDropdown .editer-dropdown-content {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 20px 0;
+  border-radius: 3px;
+  background-color: #387195;
+  color: #fff;
+}
+#editerDropdown .editer-dropdown-content label {
+  display: inline-block;
+}
+#editerDropdown .editer-dropdown-content input {
+  width: 280px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #04436a;
+  color: #fff;
+  text-decoration: none;
+}
+#editerDropdown .editer-dropdown-content ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-height: 360px;
+  overflow: auto;
+}
+#editerDropdown .editer-dropdown-content li {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 32px;
+}
+#editerDropdown .editer-dropdown-content li:hover {
+  background-color: #064e7b;
+}
+
+/* 运动样式 */
+@keyframes moveRight {
+  0% {right: 200px; opacity: 0; filter: alpha(opacity=0);}
+  100% {right: 10px; opacity: 1; filter: alpha(opacity=100);}
+}
+#editerDropdown .editer-dropdown-content a.animate-right {
+  animation: moveRight 1s;
+}
+
+#editerDropdown .editer-dropdown-content li:hover a {
+  display: block;
+}
+#editerDropdown .editer-dropdown-content li a {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  display: none;
+  width: 12px;
+  height: 12px;
+  background: url("../../../images/close.png") center center no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+#editerDropdown .editer-dropdown-footer {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  border-top: 1px solid #215170;
+  text-align: center;
+}
+#editerDropdown .editer-dropdown-footer button:first-child {
+  margin-right: 20%;
+}

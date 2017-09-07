@@ -1,0 +1,199 @@
+<link rel="stylesheet" href="pages/tc_cr/create_cross/createIntersection.css">
+
+<div id="create_intersection">
+    <div class="create-intersection-content">
+        <ul class="intersection-content-tab ">
+            <li class="li-active">路口基本信息</li>
+            <li>路口结构</li>
+            <li>工作表/时段表管理</li>
+        </ul>
+        <ul class="intersection-content-tab-message">
+            <li class="intersection-information">
+                <div class="intersection-information-header">
+                    <button class="relate-position-btn btn-lg">关联位置</button>
+                    <label>用户名称：</label>
+                    <span class="crno-createname">admin</span>
+                    <label>建档时间：</label>
+                    <span class="crno-createtime"></span>
+                </div>
+                <div class="intersection-information-middle">
+                    <ul>
+                        <li>
+                            <label>路口别称：</label>
+                            <input class="crno-cralias crno-input" type="text" spellcheck="false">
+                            <img class="crno-star" src="images/star.png">
+                        </li>
+                        <li>
+                            <label>路口名：</label>
+                            <input class="crno-crossname crno-input" type="text" spellcheck="false">
+                            <img class="crno-star" src="images/star.png">
+                        </li>
+                        <li>
+                            <label>路口类型：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-crosstype"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>路口编号：</label>
+                            <input class="crno-crossno crno-input" type="text" spellcheck="false">
+                            <img class="crno-star" src="images/star.png">
+                        </li>
+                        <li>
+                            <label>所属辖区：</label>
+                            <!--<input class="crno-region crno-input" type="text" spellcheck="false">-->
+                            <!--<img class="crno-star" src="images/star.png">-->
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-region"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>信号机厂家：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-annfactory"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>路口管理单位：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-manager"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>信号机型号：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-anntype"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>重要程度：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-degree"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>信号机编号：</label>
+                            <input class="crno-idstr crno-input" type="text" spellcheck="false">
+                            <img class="crno-star" src="images/star.png">
+                        </li>
+                        <li>
+                            <label>亮灯方式：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-lighttype"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>联网方式：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-webtype"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>监控编号：</label>
+                            <input class="crno-monitorno" type="text" spellcheck="false">
+                        </li>
+                        <li>
+                            <label>授时方式：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-timetype"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>方案维护单位：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-planmaintain"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>设备维护单位：</label>
+                            <div class="drop-down">
+                                <label class="drop-down-text crno-devicemaintain"></label>
+                                <span class="drop-down-arrow"></span>
+                                <ul class="drop-down-selections"></ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="intersection-information-footer hide-footer">
+                    <button class="intersection-save-btn btn-lg">保存</button>
+                    <!--<button class="intersection-next-btn">下一步</button>-->
+                    <button class="intersection-cancel-btn btn-lg">取消</button>
+                </div>
+            </li>
+            <li class="intersection-structure">
+                <button class="intersection-edit-btn">路口空间编辑</button>
+                <ul class="intersection-structure-tab">
+                    <li class="li-active">道路交通组织</li>
+                    <li>信号管控组织</li>
+                </ul>
+                <ul class="intersection-structure-tab-message">
+                    <li class="intersection-structure-tab-message1"></li>
+                    <li class="intersection-structure-tab-message2"></li>
+                </ul>
+                <div class="intersection-structure-footer hide-footer">
+                    <button class="intersection-save-btn btn-lg">保存</button>
+                    <!--<button class="intersection-next-btn">下一步</button>-->
+                    <button class="intersection-cancel-btn btn-lg">取消</button>
+                </div>
+            </li>
+            <li class="weekday-managment">
+                <div class="weekday-managment-header">
+                    <label>路口名：</label>
+                    <span class="intersection-name"></span>
+                    <label>路口编号：</label>
+                    <span class="intersection-number"></span>
+                    <label>信号机类型：</label>
+                    <span class="annunciator-type"></span>
+                </div>
+                <div class="weekday-managment-middle">
+                    <ul class="middle-caption">
+                        <li>序号</li>
+                        <li>时段表名称</li>
+                        <li>时段表编号</li>
+                        <li class="week-day-execute">星期执行日</li>
+                        <li>特殊日</li>
+                        <li class="week-day-edit">时段表</li>
+                        <li>操作</li>
+                    </ul>
+                    <div class="middle-message">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td colspan="7"><a class="add-tr-btn" href="javascript:;"></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="page-btn-wrap"></div>
+                </div>
+                <div class="weekday-managment-footer hide-footer">
+                    <button class="intersection-save-btn btn-lg">保存</button>
+                    <button class="intersection-cancel-btn btn-lg">取消</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="pages/tc_cr/create_cross/createIntersection.js"></script>

@@ -1,0 +1,576 @@
+.panel-header {
+  background: #757575;
+  border: 0 none;
+}
+.panel-title {
+  text-align: center;
+  color: #fff;
+}
+.panel-body {
+  border: 0 none;
+  background: rgba(94, 94, 94, 0.66);
+}
+.window {
+  background: rgba(0, 0, 0, 0.62);
+  border: 0 none;
+}
+.window .window-body {
+  border-color: #5d5d5d;
+}
+.window .panel-header {
+  border-bottom: 1px solid #5d5d5d;
+}
+#south_layout_window .tabs-container {
+  border-top: 1px solid #5d5d5d;
+}
+.layout-expand-west,
+.layout-expand-east {
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.62);
+}
+.layout-expand-west:hover,
+.layout-expand-east:hover {
+  opacity: 1;
+  transition: .3s;
+}
+.datagrid-row-over {
+  background: #96989d;
+}
+.accordion {
+  background: #5d5d5d url("../images/earth-big.png") no-repeat 70px 150px;
+  border: 0 none;
+}
+.accordion .accordion-header {
+  background: #1a78bf;
+  border-top: 1px solid #165192;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+.accordion .accordion-header-selected {
+  background: #000000;
+  border-top: 1px solid #1e538f;
+}
+.accordion .accordion-header-selected .panel-title {
+  color: #fff;
+}
+.layout-panel-east {
+  border-left: 5px solid #757575;
+}
+.layout-split-west,
+.layout-panel-east,
+.layout-split-south {
+  border-top: 1px solid #074669;
+  position: fixed;
+}
+.layout-split-west {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-right: 5px solid #757575;
+}
+.layout-expand {
+  background: rgba(0, 0, 0, 0.62);
+}
+.tabs {
+  border: 0 none;
+  padding: 0;
+}
+.tabs li {
+  margin: 0;
+}
+.tabs-header {
+  background: rgba(0, 0, 0, 0.62);
+  border: 0 none;
+}
+.tabs li a.tabs-inner {
+  background: #5d5d5d;
+  color: #fff;
+  border-radius: 0;
+}
+.tabs li a.tabs-inner,
+.tabs li.tabs-selected a.tabs-inner {
+  border: 0 none;
+}
+.tabs li.tabs-selected a.tabs-inner {
+  background: rgba(94, 94, 94, 0.66);
+  color: #fff;
+}
+.tabs-panels {
+  padding: 4px;
+  border: 0 none;
+  border-color: #5d5d5d;
+}
+.tabs-scroller-left,
+.tabs-scroller-right {
+  border: 0 none;
+  background: transparent;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+table {
+  background: rgba(80, 80, 80, 0.86);
+}
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  border: 1px solid #000000;
+  border-right: 0 none;
+}
+.datagrid-header td {
+  border: 1px solid #000000;
+}
+.datagrid-body td {
+  border: 1px solid #000000;
+  height: 80px;
+}
+.datagrid-row-selected {
+  background: #487fa4;
+}
+.datagrid-row:hover {
+  background: #96989d;
+}
+.datagrid-toolbar {
+  background: #5d5d5d;
+  border: 0 none;
+}
+.datagrid-htable,
+.datagrid-btable,
+.datagrid-ftable {
+  border-collapse: collapse;
+}
+.datagrid-header {
+  border: 0 none;
+}
+.datagrid-header,
+.datagrid-td-rownumber {
+  background: transparent;
+}
+.datagrid-pager {
+  background: rgba(0, 0, 0, 0.62);
+}
+.datebox .combo-arrow {
+  background: transparent;
+  color: #fff;
+  opacity: 1;
+  line-height: 25px;
+  text-align: center;
+}
+.pagination td {
+  background: rgba(0, 0, 0, 0.62);
+  border: 0 none;
+}
+.pagination-btn-separator {
+  border: 0 none;
+}
+.datagrid .datagrid-pager {
+  border: 0 none;
+}
+.pagination-page-list {
+  width: 40px;
+  height: 20px;
+  line-height: 14px;
+  padding-left: 5px;
+}
+.pagination .pagination-num {
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+.pagination-info {
+  display: none;
+}
+.datagrid-toolbar {
+  color: #fff;
+}
+.datagrid-toolbar .textbox {
+  background: transparent;
+  border: 1px solid #4e4e4d;
+  margin: 0 5px;
+  width: 60px;
+}
+.datagrid-toolbar .combo-arrow {
+  background-color: transparent;
+}
+.datagrid-toolbar .search-box {
+  display: inline-block;
+  height: 27px;
+  border: 1px solid #4e4e4d;
+}
+.datagrid-toolbar .search-box input {
+  float: left;
+  height: 25px;
+}
+.datagrid-toolbar .search-box i {
+  float: left;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+}
+.combobox-item {
+  color: #fff;
+}
+.combobox-item:hover {
+  background: #4e4e4d;
+}
+#search_input {
+  border: 1px solid #4e4e4d;
+  border-radius: 3px 0 0 3px;
+}
+#search_button {
+  background: #4e4e4d;
+  display: inline-block;
+  width: 25px;
+  height: 24.5px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 0 3px 3px 0;
+  vertical-align: top;
+}
+.calendar table {
+  background: #fff;
+}
+.datebox-button {
+  display: none;
+}
+#tab-tools a {
+  display: block;
+  height: 20px;
+  background: transparent;
+  color: #fff;
+  width: 500px;
+  text-align: right;
+  padding-right: 10px;
+  border: 0 none;
+}
+li.tabs-last {
+  display: none;
+}
+tr.pagenation {
+  background: rgba(122, 122, 122, 0.31);
+  border: 0 none;
+}
+tr.pagenation button {
+  float: left;
+}
+tr.pagenation select {
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  width: 40px;
+  border-radius: 2px;
+  margin: 0 3px;
+  box-shadow: 1px 1px 1px #000;
+}
+tr.pagenation td {
+  border: 0 none;
+  padding: 5px 0;
+}
+.table-add {
+  width: 100%;
+  color: #fff;
+  border: 0 none;
+  background: rgba(80, 80, 80, 0.86);
+}
+.table-add:hover {
+  color: rgba(0, 0, 0, 0.72);
+}
+.table-add:active {
+  padding: 0;
+  color: #fff;
+}
+button {
+  font-family: 'Microsoft Yahei';
+  box-sizing: border-box;
+}
+button:active {
+  padding: 0 0 2px 2px;
+}
+.btn-lg {
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  border-top: 1px solid #6faad7;
+  border-bottom: 1px solid #24475e;
+  border-radius: 3px;
+  outline: none;
+  background-color: #000000;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-lg:hover {
+  background: #626262;
+}
+.btn-sm {
+  width: 50px;
+  height: 22px;
+  line-height: 22px;
+  margin-right: 5px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 1px 1px #000;
+  cursor: pointer;
+}
+.btn-sm:hover {
+  background: #919191;
+}
+.btn-xs {
+  width: 30px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 0 2px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 1px 1px #000;
+  cursor: pointer;
+}
+.btn-xs:hover {
+  background: #919191;
+}
+.btn-close-layout {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 20px;
+  border: 0 none;
+  background: #f00;
+}
+.btn-drag-layout {
+  display: block;
+  float: left;
+  width: 500px;
+  height: 20px;
+  margin-top: 3px;
+  border: 0 none;
+  background: rgba(0, 0, 0, 0.62);
+}
+.tabs-header,
+.tabs-tool {
+  background: rgba(0, 0, 0, 0.62);
+  border: 0 none;
+}
+#left_windows .panel-tool {
+  width: 100%;
+  display: flex;
+}
+#left_windows a.icon-drag {
+  flex-grow: 8;
+}
+#left_windows a.icon-drag:hover {
+  background: transparent;
+}
+#left_windows a.panel-tool-collapse {
+  flex-grow: 2;
+}
+input[type='text'],
+input[type='password'] {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 150px;
+  height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Microsoft Yahei';
+}
+select {
+  width: 150px;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  border: 0 none;
+  border-radius: 3px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Microsoft Yahei';
+  outline: 0 none;
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  /*很关键：将默认的select选择框样式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background: #000000 url("../images/arrow.png") no-repeat scroll right center;
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right: 14px;
+}
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+option {
+  border: 0 none;
+  outline: 0 none;
+}
+select::-ms-expand {
+  display: none;
+}
+nav {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: rgba(0, 0, 0, 0.62);
+  position: relative;
+  z-index: 999;
+  overflow: hidden;
+  padding-left: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+nav .logo {
+  display: block;
+  float: left;
+  height: 60px;
+  width: 60px;
+  background: url("../images/logo.png") no-repeat;
+  background-size: contain;
+}
+nav h1 {
+  font-size: 24px;
+  float: left;
+  color: #fff;
+}
+nav .nav {
+  float: left;
+  margin-left: 50px;
+}
+nav .nav li {
+  cursor: pointer;
+}
+nav .nav > li {
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
+  float: left;
+  margin-top: 30px;
+  margin-left: 10px;
+  height: 30px;
+  width: 100px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  background: #7d8385;
+  position: relative;
+}
+nav .nav > li:nth-of-type(1) {
+  border-radius: 5px 0 0 0 ;
+}
+nav .nav > li:last-of-type {
+  border-radius: 0 5px 0 0 ;
+}
+nav .nav > li:hover > ul > li {
+  height: 30px;
+  margin: 3px 0;
+  transition-duration: .5s;
+}
+nav .nav > li > ul {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 100px;
+  transition-duration: .7s;
+  overflow: hidden;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.6);
+}
+nav .nav > li > ul > li {
+  height: 0px;
+  line-height: 30px;
+  background: #7d8385;
+  transition-duration: .7s;
+}
+nav .nav > li > ul > li:hover {
+  color: #000;
+}
+nav .user-center {
+  margin-right: 60px;
+}
+nav .user-center a {
+  color: #fff;
+}
+nav .user-center:hover #optionsList {
+  height: 90px;
+  transition: .4s 0s;
+}
+nav .user-center #optionsList {
+  position: fixed;
+  right: 45px;
+  top: 60px;
+  width: 90px;
+  background: rgba(0, 0, 0, 0.62);
+  height: 0;
+  overflow: hidden;
+  transition: .8s .8s;
+}
+nav .user-center #optionsList li {
+  height: 30px;
+  overflow: hidden;
+  line-height: 30px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+a.skiplink {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+a.skiplink:focus {
+  clip: auto;
+  height: auto;
+  width: auto;
+  background-color: #fff;
+  padding: 0.3em;
+}
+#map:focus {
+  outline: #4A74A8 solid 0.15em;
+}
+#mini_window {
+  width: 30px;
+  background: #f00;
+}
+.options p {
+  margin: 10px 0;
+}
+.options .changeColor {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin: 0 20px;
+  box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+  border: 1px solid #fff;
+  text-align: center;
+  line-height: 50px;
+}
+.options .changeColor:hover {
+  transform: scale(1.1);
+  transition: .3s;
+}
+.options .changeColor#defaultTheme {
+  background: #064e7b;
+  color: #fff;
+}
+.options .changeColor#blackTheme {
+  background: #000;
+  color: #fff;
+}
+.options .changeColor#orangeTheme {
+  background: #fcb02d;
+  color: #fff;
+}

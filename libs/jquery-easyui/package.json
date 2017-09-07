@@ -1,0 +1,51 @@
+{
+  "_from": "jquery-easyui",
+  "_id": "jquery-easyui@1.5.21",
+  "_inBundle": false,
+  "_integrity": "sha1-U2ghpdK+/ud4wbaumuLvShJLELs=",
+  "_location": "/jquery-easyui",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "jquery-easyui",
+    "name": "jquery-easyui",
+    "escapedName": "jquery-easyui",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/jquery-easyui/download/jquery-easyui-1.5.21.tgz",
+  "_shasum": "536821a5d2befee778c1b6ae9ae2ef4a124b10bb",
+  "_spec": "jquery-easyui",
+  "_where": "D:\\traffic2-plan",
+  "author": {
+    "name": "nieyuge"
+  },
+  "bugs": {
+    "url": "https://github.com/nieyuge/jquery-easyui/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "> 最新版 官网地址: `www.jeasyui.net`",
+  "homepage": "https://github.com/nieyuge/jquery-easyui#readme",
+  "keywords": [
+    "jquery",
+    "easyui"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "jquery-easyui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nieyuge/jquery-easyui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.5.21"
+}

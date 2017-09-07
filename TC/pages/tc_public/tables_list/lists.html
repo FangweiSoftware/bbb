@@ -1,0 +1,235 @@
+
+<div id="manage_tables" class="easyui-tabs" style="width:100%;height:100%;" data-options="tools:'#tab-tools'">
+    <div title="路口管理" data-options="" style="overflow:auto;display:none;">
+        <div style='height:100%;'>
+        <table id="tc_manage_table" style='height:100%;width:100%'>
+            <tbody id='tc_manage_tbody'>
+
+            </tbody>
+        </table>
+        </div>
+        <div id="tc_tb" style="padding:5px;height:auto">
+            <div>
+                选择日期:<input class="easyui-datebox" style="width:80px">
+                至<input class="easyui-datebox" style="width:80px">
+                筛选条件:
+                <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+                    <option value="java">全部</option>
+                    <option value="no">序号</option>
+                    <option value="c">名称</option>
+                    <option value="basic">编号</option>
+                    <option value="perl">辖区大队</option>
+                </select>
+                <input type="text" class='search_input'><i class='glyphicon glyphicon-search' class='search_button'></i>
+            </div>
+        </div>
+    </div>
+    <div title="舆情管理" style="display:none;height:100%">
+        <div style='height:100%;'>
+            <table id="pubinfo_manage_table" style='height:100%;width:100%'>
+                <tbody id='pubinfo_manage_tbody'>
+
+                </tbody>
+            </table>
+            <div id="pubinfo_tb" style="padding:5px;height:auto">
+                <div>
+                    选择日期:<input class="easyui-datebox" style="width:80px">
+                    至<input class="easyui-datebox" style="width:80px">
+                    筛选条件:
+                    <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+                        <option value="java">全部</option>
+                        <option value="no">序号</option>
+                        <option value="c">名称</option>
+                        <option value="basic">编号</option>
+                        <option value="perl">辖区大队</option>
+                    </select>
+                    <input type="text" class='search_input'>
+                    <button class='search_button'><i class='glyphicon glyphicon-search'></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div title="优化管理" data-options="href:'pages/tc_cross_basicinfo/manage_cross.html'" style="padding:20px;display:none;">
+        tab3
+    </div>
+    <div id="tab-tools">
+        <a onclick='closeSouthLayout()' class='.btn-drag-layout'><i class='glyphicon glyphicon-menu-down'></i></a>
+    </div>
+</div>
+<script>
+    $.ajax({
+        type:'get',
+        url:WEBAPI_ADDRESS+'/api/Tc_pubinfo_basic/GetByPage',
+        data:{
+            Num:10,
+            Pno:1,
+        },
+        success:function(res){
+            $.each(res.data,function (index,item){
+                item.createtime=moment(item.createtime).format('YY/MM/DD');
+                item.edittime=moment(item.edittime).format('YY/MM/DD');
+            });
+            var html = template('pubinfo_manage_temp',{data:res.data});
+            $('#pubinfo_manage_tbody').html(html);
+            $('#tc_manage_tbody').html(html);
+            $('#pubinfo_manage_table').datagrid({
+                /**开启分页*/
+                pagination: true,
+                /**默认是服务器排序，这里需要手动关闭，切换为客户端排序*/
+                remoteSort: false,
+                /**单条选择模式*/
+                singleSelect: false,
+                /**配置*/
+                fitColumns:true,
+                nowrap:false,
+                scrollbarSize:40,
+                pageNumber:1,
+                pageSize:10,
+                autoRowHeight:false,
+                toolbar:'#pubinfo_tb',
+                columns: [[
+                    /**sortable：true 开启排序*/
+                    {field: 'itemno', title: "序号", width:'5%',sortable: true,resizable:false,},
+                    {field: 'createtime', title: "日期",width:'5%', sortable: true,resizable:false,},
+                    {field: 'name', title: "名称",width:'5%',  sortable: true,resizable:false,},
+                    {field: 'type', title: "类型", width:'5%', sortable: true,resizable:false,},
+                    {field: 'pubno', title: "编号", width:'5%', sortable: true,resizable:false,},
+                    {field: 'manager', title: "辖区大队", width:'7%', sortable: true,resizable:false,},
+                    {field: 'pubfrom', title: "舆情来源", width:'5%', sortable: true,resizable:false,},
+                    {field: 'degree', title: "紧急程度", width:'5%', sortable: true,resizable:false,},
+                    {field: 'problemtype', title: "问题分类", width:'8%', sortable: true,resizable:false,},
+                    {field: 'description', title: "问题描述", width:'10%', sortable: true,resizable:false,},
+                    {field: 'approach', title: "解决措施", width:'5%', sortable: true,resizable:false,},
+                    {field: 'sysflag', title: "优化任务", width:'5%', resizable:false,},
+                    {field: 'processdate', title: "处理日期", width:'5%', sortable: true,resizable:false,},
+                    {field: 'processresult', title: "处理结果", width:'6%', sortable: true,resizable:false,},
+                    {field: 'attach', title: "舆情附录", width:'5%', resizable:false,},
+                    {field: 'advice', title: "处理意见", width:'6%', sortable: true,resizable:false,},
+                    {field: 'state', title: "任务状态", width:'5%', sortable: true,resizable:false,},
+                    {field: 'operation', title: "操作",width:'5%', sortable: true,resizable:false,}
+                ]],
+                onLoadSuccess: function(){
+//                    $('#pubinfo_manage_table').datagrid('freezeRow',0).datagrid('freezeRow',1);
+                    $('.datebox').find('a.textbox-icon').html('<i class="glyphicon glyphicon-calendar"></i>');
+                    $('.textbox.combo.datebox')[0].style.width='90px';
+                    $('.textbox.combo.datebox')[1].style.width='90px';
+//                    $('#_easyui_textbox_input5')[0].style.width='80px';
+//                    $('#_easyui_textbox_input6')[0].style.width='80px';
+                },
+                onSelect:function (index,data){
+                    $(this).datagrid('freezeRow',index);
+                },
+                onUnselect:function (index,data){
+                    $(this).children().eq(0).children().eq(index).remove()
+                }
+            });
+            $('#tc_manage_table').datagrid({
+                /**开启分页*/
+                pagination: true,
+                /**默认是服务器排序，这里需要手动关闭，切换为客户端排序*/
+                remoteSort: false,
+                /**单条选择模式*/
+                singleSelect: false,
+                /**配置*/
+                fitColumns:true,
+                nowrap:false,
+                scrollbarSize:40,
+                pageNumber:1,
+                pageSize:10,
+                autoRowHeight:false,
+                toolbar:'#tc_tb',
+                frozenColumns:[[
+                    {field: 'itemno', title: "路口编号", width:'5%',sortable: true,resizable:false,},
+                    {field: 'createtime', title: "路口类型",width:'5%', sortable: true,resizable:false,},
+                    {field: 'name', title: "所属辖区",width:'5%',  sortable: true,resizable:false,},
+                    {field: 'type', title: "重要程度", width:'5%', sortable: true,resizable:false,},
+                ]],
+                columns: [[
+                    /**sortable：true 开启排序*/
+                    {field: 'pubno', title: " 连网方式", width:'5%', sortable: true,resizable:false,},
+                    {field: 'manager', title: "监控编号", width:'7%', sortable: true,resizable:false,},
+                    {field: 'pubfrom', title: "最近一次巡检", width:'7%', sortable: true,resizable:false,},
+                    {field: 'degree', title: "最近一次舆情", width:'5%', sortable: true,resizable:false,},
+                    {field: 'problemtype', title: "最近一次调优", width:'8%', sortable: true,resizable:false,},
+                    {field: 'description', title: "基本信息", width:'18%', sortable: true,resizable:false,},
+                    {field: 'approach', title: "巡检任务", width:'8%', sortable: true,resizable:false,},
+                    {field: 'sysflag', title: "优化任务", width:'5%', resizable:false,},
+                    {field: 'processdate', title: "舆情管理", width:'5%', sortable: true,resizable:false,},
+                    {field: 'processresult', title: "相关文档", width:'10%', sortable: true,resizable:false,},
+                    {field: 'attach', title: "舆情附录", width:'5%', resizable:false,},
+                    {field: 'advice', title: "处理意见", width:'13%', sortable: true,resizable:false,},
+                    {field: 'state', title: "任务状态", width:'5%', sortable: true,resizable:false,},
+                    {field: 'operation', title: "操作",width:'5%', sortable: true,resizable:false,}
+                ]],
+                onLoadSuccess: function(){
+//                    $('#pubinfo_manage_table').datagrid('freezeRow',0).datagrid('freezeRow',1);
+                    $('.datebox').find('a.textbox-icon').html('<i class="glyphicon glyphicon-calendar"></i>');
+                    $('.textbox.combo.datebox')[0].style.width='90px';
+                    $('.textbox.combo.datebox')[1].style.width='90px';
+//                    $('#_easyui_textbox_input5')[0].style.width='80px';
+//                    $('#_easyui_textbox_input6')[0].style.width='80px';
+                },
+                onSelect:function (index,data){
+                    $(this).datagrid('freezeRow',index);
+                },
+                onUnselect:function (index,data){
+
+                }
+            });
+        }
+    });
+    $('#manage_tables').tabs({
+        onSelect:function (title,index){
+            console.log(index);
+        }
+    })
+
+
+</script>
+
+<script type='text/html' id='pubinfo_manage_temp'>
+    {{each data}}
+    <tr data-id='{{$value.pubinfoid}}' data-pubno='{{$value.pubno}}' data-tuneid='{{$value.tuneid}}' data-pubfrom='{{$value.pubfrom}}' data-description='{{$value.description}}'>
+        <td>{{$value.pubno}}</td>
+        <td>{{$value.createtime}}</td>
+        <td>{{$value.name}}</td>
+        <td >{{$value.type==0?'路口':'绿路'}}</td>
+        <td>{{$value.itemno}}</td>
+        <td>{{$value.manager}}</td>
+        <td>{{$value.pubfrom}}</td>
+        <td>{{$value.degree}}</td>
+        <td>{{$value.problemtype}}</td>
+        <td >{{$value.description}}</td>
+        <td >{{$value.approach}}</td>
+        <td data-tuneid='{{$value.tuneid}}' data-pubinfoid='{{$value.pubinfoid}}' data-itemno='{{$value.itemno}}' data-type='{{$value.type}}'>
+            {{if ($value.tuneid)}}
+            <button class='btn btn-xs btn-db checkOptimize'>查看</button>
+            {{else}}
+            <button class='btn btn-xs btn-db addOptimize' data-tuneid=''>新建</button>
+            {{/if}}
+        </td>
+        <td>{{$value.edittime}}</td>
+        <td>{{$value.processresult}}</td>
+        <td  data-id='{{$value.pubinfoid}}' data-itemno='{{$value.itemno}}' data-index='{{$index}}'>
+            <button class="btn btn-xs btn-db download-att">查看</button>
+        </td>
+        <td>
+            {{if ($value.advice!="")}}
+            {{$value.advice}}
+            {{else}}
+            <!--<button class="btn btn-xs btn-db add_pro_pic" data-toggle="modal" data-target="#upload_modal">新建</button>-->
+            {{/if}}
+        </td>
+        <td>{{$value.state}}</td>
+        <td >
+            {{if ($value.sysflag==-2)}}
+            <span>已归档</span>
+            {{else}}
+            <p style='margin: 3px 0;'><button class="btn btn-xs btn-db mt-5 edit-pubinfo">编辑</button></p>
+            <p style='margin: 3px 0;'><button class="btn btn-xs btn-db mt-5 delete_pubinfo">删除</button></p>
+            <p style='margin: 3px 0;'><button class="btn btn-xs btn-db mt-5 save-doc">归档</button></p>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
